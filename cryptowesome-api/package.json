@@ -6,6 +6,7 @@
   "author": "Viktor Stoyanov",
   "license": "MIT",
   "private": false,
+  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Vikmanatus/express-typescript-starterkit.git"
@@ -16,10 +17,9 @@
     "watch": "tsc -w",
     "lint": "eslint . --ext .ts",
     "generate-postman-collection": "yarn build && ts-node-dev -r tsconfig-paths/register --no-notify build/scripts/generate.postman.collection.js",
-    "build":"tsc",
+    "build": "tsc",
     "test": "jest --coverage",
     "test:watch": "jest --watch"
-
   },
   "keywords": [
     "Express",
@@ -45,7 +45,9 @@
     "typescript": "^4.9.5"
   },
   "dependencies": {
+    "@apollo/server": "^4.7.5",
     "dotenv": "^16.0.3",
+    "graphql": "^16.7.1",
     "tsconfig-paths": "^4.1.2"
   }
 }
