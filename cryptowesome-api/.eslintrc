@@ -1,14 +1,35 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-  "plugins": ["@typescript-eslint", "no-loops"],
+  "plugins": ["@typescript-eslint", "no-loops", "unused-imports"],
+  "rules": {
+    "no-loops/no-loops": 0,
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-explicit-any": "error",
+    "@typescript-eslint/ban-ts-comment": "warn",
+    "no-console": ["error", { "allow": ["warn", "error"] }],
+    "unused-imports/no-unused-imports": "error",
+    "unused-imports/no-unused-vars": [
+      "warn",
+      {
+        "vars": "all",
+        "varsIgnorePattern": "^_",
+        "args": "after-used",
+        "argsIgnorePattern": "^_"
+      }
+    ],
+    "sort-imports": [
+      "error",
+      {
+        "ignoreDeclarationSort": true
+      }
+    ],
+    "no-restricted-imports": ["error"]
+  },
   "extends": [
     "eslint:recommended",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended"
   ],
-  "ignorePatterns": ["./scripts/sonar-scanner.ts"],
-  "rules": {
-    "no-loops/no-loops": 0
-  }
+  "ignorePatterns": ["./scripts/sonar-scanner.ts"]
 }
