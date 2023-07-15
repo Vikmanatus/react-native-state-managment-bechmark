@@ -1,0 +1,21 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to dev:debug",
+      "port": 4321,
+      "restart": true,
+      "cwd": "${workspaceRoot}/cryptowsome-api"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Debug API",
+      "cwd": "${workspaceRoot}/cryptowsome-api",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run-script", "dev"]
+    }
+  ]
+}

@@ -2,6 +2,12 @@
   "root": true,
   "parser": "@typescript-eslint/parser",
   "plugins": ["@typescript-eslint", "no-loops", "unused-imports"],
+  "extends": [
+    "eslint:recommended",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended"
+  ],
+  "ignorePatterns": ["./scripts/sonar-scanner.ts"],
   "rules": {
     "no-loops/no-loops": 0,
     "@typescript-eslint/no-unused-vars": "error",
@@ -23,13 +29,6 @@
       {
         "ignoreDeclarationSort": true
       }
-    ],
-    "no-restricted-imports": ["error"]
-  },
-  "extends": [
-    "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended"
-  ],
-  "ignorePatterns": ["./scripts/sonar-scanner.ts"]
+    ]
+  }
 }
